@@ -34,15 +34,15 @@ struct ClapArgs {
 struct BondInitInstructionData {
     operation_id: [u8; 8],
     bond_authority: Pubkey,
-    revenue_share: u32,
+    cpmpe: u64,
 }
 
 impl BondInitInstructionData {
     fn new(bond_authority: Pubkey) -> Self {
         Self {
-            operation_id: [0x5f, 0x5d, 0x5d, 0xb5, 0xdd, 0x24, 0x7e, 0x40], // fucking anchor
+            operation_id: [0x5f, 0x5d, 0x5d, 0xb5, 0xdd, 0x24, 0x7e, 0x40], // fucking anchor sha256(b'global:init_bond')[:8]
             bond_authority,
-            revenue_share: 0,
+            cpmpe: 0,
         }
     }
 }
