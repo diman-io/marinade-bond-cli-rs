@@ -1,4 +1,3 @@
-use solana_sdk::system_instruction;
 use {
     borsh::{BorshDeserialize, BorshSerialize},
     clap::Parser,
@@ -8,6 +7,7 @@ use {
         pubkey::Pubkey,
         signature::{Keypair, Signer},
         signer::EncodableKey,
+        system_instruction,
         transaction::Transaction,
     },
 };
